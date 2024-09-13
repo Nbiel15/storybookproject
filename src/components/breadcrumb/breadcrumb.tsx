@@ -17,7 +17,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         {datas.map((item, index) => (
           <li key={index}>
             <Link legacyBehavior href={item.path}>
-              <a className="text-black-500 ">{item.title}</a>
+              <a className="text-black-500 font-medium hover:text-blue-600 transition duration-500 ease-in-out">
+                {item.title}
+              </a>
             </Link>
             {index < datas.length - 1 && <span className="mx-2">/</span>}
           </li>

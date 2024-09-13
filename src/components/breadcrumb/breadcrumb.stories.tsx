@@ -3,7 +3,7 @@ import Breadcrumbs from "./breadcrumb";
 import { BreadcrumbsProps } from "./breadcrumbs.type";
 
 const meta: Meta<typeof Breadcrumbs> = {
-  title: "Components/Breadcrumbs",
+  title: "Components/Breadcrumb",
   component: Breadcrumbs,
   parameters: {
     layout: "centered",
@@ -18,12 +18,11 @@ const meta: Meta<typeof Breadcrumbs> = {
   args: {
     variant: "medium",
     datas: [
-      { title: "Amba", path: "/" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/amba" },
+      { title: "Home", path: "/" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
     ],
   },
 };
@@ -35,12 +34,11 @@ export const Default: Story = {
   args: {
     variant: "medium",
     datas: [
-      { title: "Amba", path: "/" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/" },
-      { title: "Amba", path: "/amba" },
-      { title: "Amba", path: "/amba" },
+      { title: "Home", path: "/" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
+      { title: "Menu", path: "/menu" },
     ],
   },
 };

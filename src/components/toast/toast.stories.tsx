@@ -1,4 +1,3 @@
-// stories/toast.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import Toast from "./toast";
 import { ToastProps } from "./toast.type";
@@ -6,9 +5,6 @@ import { ToastProps } from "./toast.type";
 const meta: Meta<typeof Toast> = {
   title: "Components/Toast",
   component: Toast,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {
@@ -25,7 +21,8 @@ const meta: Meta<typeof Toast> = {
     },
   },
   args: {
-    message: "This is a toast message!",
+    title: "Info Min",
+    message: "Give short additional message here. Maximum 2 Line",
     variant: "information",
     size: "medium",
     type: "information",
@@ -38,7 +35,7 @@ type Story = StoryObj<ToastProps>;
 
 export const Default: Story = {
   args: {
-    message: "This is a default toast message!",
+    message: "Give short additional message here. Maximum 2 Line",
     variant: "information",
     size: "medium",
     type: "information",
@@ -47,7 +44,8 @@ export const Default: Story = {
 
 export const Success: Story = {
   args: {
-    message: "Success! Operation completed.",
+    title: "Sukses Min",
+    message: "Give short additional message here. Maximum 2 Line",
     variant: "success",
     size: "medium",
     type: "notification",
@@ -56,7 +54,8 @@ export const Success: Story = {
 
 export const Danger: Story = {
   args: {
-    message: "Error! Something went wrong.",
+    title: "Error Min",
+    message: "Give short additional message here. Maximum 2 Line",
     variant: "danger",
     size: "medium",
     type: "notification",
@@ -65,9 +64,10 @@ export const Danger: Story = {
 
 export const Warning: Story = {
   args: {
-    message: "Warning! Please be cautious.",
+    title: "Bahaya Min",
+    message: "Give short additional message here. Maximum 2 Line",
     variant: "warning",
-    size: "large",
+    size: "medium",
     type: "information",
   },
 };

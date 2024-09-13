@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ToastProps } from "./toast.type";
 
 const Toast: React.FC<ToastProps> = ({
+  title,
   message,
   variant = "information",
   size = "medium",
@@ -14,7 +15,7 @@ const Toast: React.FC<ToastProps> = ({
     success: "bg-green-500 text-white",
     danger: "bg-red-500 text-white",
     information: "bg-blue-500 text-white",
-    warning: "bg-yellow-500 text-black",
+    warning: "bg-yellow-500 text-white",
   };
 
   const sizeStyles = {
@@ -30,6 +31,11 @@ const Toast: React.FC<ToastProps> = ({
     }, duration);
     return () => clearTimeout(timer);
   }, [duration]);
+
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+
   return (
     <div
       className={`fixed bottom-5 right-5 transition-opacity duration-500 ${
@@ -37,10 +43,17 @@ const Toast: React.FC<ToastProps> = ({
       } ${variantStyles[variant]} ${sizeStyles[size]} rounded shadow-lg`}
       role="alert"
     >
-      <strong>
-        {type === "notification" ? "Notification: " : "Information: "}
-      </strong>
-      {message}
+      <div className="flex space-between items-start items-center">
+        <strong className="pr-56">{title}</strong>
+        <button
+          className=" text-3xl text-white"
+          onClick={handleClose}
+          aria-label="Close"
+        >
+          &times;
+        </button>
+      </div>
+      <div className="max-w-xs">{message}</div>
     </div>
   );
 };
